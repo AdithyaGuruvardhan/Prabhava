@@ -16,7 +16,7 @@ const SHARE_IMAGE = `${SITE_URL}/prabhava/rishab_shetty_poster.webp`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Prabhava | Kannada Film Production & Promotion — Sripada Studios Bengaluru',
+  title: 'Prabhava',
   description:
     'Prabhava is the film production and promotion vertical of Sripada Studios, Bengaluru. Specialising in Kannada movie marketing, teaser and trailer launches, OTT promotion, celebrity promotion, and digital PR for films in Karnataka.',
   keywords: [
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: `${SITE_URL}/prabhava`,
     siteName: 'Prabhava Sripada Studios',
-    title: 'Prabhava — Kannada Film Promotion | Sripada Studios Bengaluru',
+    title: 'Prabhava',
     description:
       'Prabhava by Sripada Studios — Bengaluru\'s dedicated Kannada film promotion and production unit. Teaser launches, OTT promotion, celebrity PR, and digital campaigns.',
     images: [{ url: SHARE_IMAGE, alt: 'Prabhava — Film Promotion Bengaluru' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prabhava | Kannada Film Promotion Bengaluru',
+    title: 'Prabhava',
     description:
       'Kannada film production and promotion by Prabhava — part of Sripada Studios, Bengaluru, Karnataka.',
     images: [SHARE_IMAGE],

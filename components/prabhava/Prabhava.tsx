@@ -352,8 +352,8 @@ function GifVideo({ src, className, start = 8, end = 16 }: { src: string; classN
       src={src}
       muted
       playsInline
-      preload="metadata"
-      loadStrategy="idle"
+      preload="auto"
+      loadStrategy="visible"
       disableAutoPlay
       className={className}
       onLoadedMetadata={() => {
