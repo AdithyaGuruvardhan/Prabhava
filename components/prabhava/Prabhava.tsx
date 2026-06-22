@@ -342,6 +342,29 @@ const promotionMakers = [
   },
 ]
 
+const faqs = [
+  {
+    question: "What is Prabhava?",
+    answer: "Prabhava is the dedicated film production and digital promotion vertical of Sripada Studios, based in Bengaluru, Karnataka. We act as the complete marketing partner for regional cinema, handling everything from trailer cuts and conceptual campaigns to press relations, OTT distribution, and digital public relations (PR).",
+  },
+  {
+    question: "What services does Prabhava offer for Kannada cinema?",
+    answer: "We offer comprehensive, end-to-end film marketing services. This includes teaser and trailer edit packaging, animation and conceptual lyrical video creation, celebrity interview setups, digital PR campaigns, influencer collaborations, movie premiere events coverage, and social media amplification.",
+  },
+  {
+    question: "Which movies have been promoted by Prabhava?",
+    answer: "Prabhava has successfully led digital marketing and PR campaigns for notable Kannada projects like 'The Judgement' (starring Ravichandran) and the rustic thriller 'Kerebete', generating over 100+ creative digital assets, lyrical videos, and theatrical promotions.",
+  },
+  {
+    question: "How does Sripada Studios handle movie PR and OTT integrations?",
+    answer: "We coordinate launch schedules directly with local media outlets, manage influencer reviews, run targeted digital advertising campaigns, and design custom social media activations to build high-reach excitement for both theatrical releases and subsequent OTT streaming launches.",
+  },
+  {
+    question: "How can filmmakers collaborate with Prabhava?",
+    answer: "Filmmakers can connect with our team directly at Sripada Studios in Bengaluru or reach out via our contact phone line and office address shown below to plan custom campaigns that align with their film's release timeline and budget goals.",
+  },
+]
+
 function GifVideo({ src, className, start = 8, end = 16 }: { src: string; className?: string; start?: number; end?: number }) {
   const ref = useRef<HTMLVideoElement>(null)
 
@@ -432,10 +455,12 @@ export default function PrabhavaPage() {
   const [selectedVideoEdit, setSelectedVideoEdit] = useState<(typeof videoEditCards)[number] | null>(null)
   const [selectedLyricalVideo, setSelectedLyricalVideo] = useState<(typeof lyricalVideoEdits)[number] | null>(null)
   const [selectedEventVideo, setSelectedEventVideo] = useState<(typeof eventHighlightVideos)[number] | null>(null)
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
   const showreelVideoRef = useRef<HTMLVideoElement | null>(null)
 
   return (
     <main className="min-h-screen bg-[#f7f5ef]">
+      <h1 className="sr-only">Prabhava — Kannada Film Production & Digital Promotion by Sripada Studios</h1>
       <Header />
 
       {/* Hero Intro Section */}
@@ -655,7 +680,7 @@ export default function PrabhavaPage() {
                     <div className="relative aspect-[3/4]">
                       <img
                         src={image}
-                        alt={`Prabhava creative ${index + 1}`}
+                        alt={`Kannada movie poster campaign creative ${index + 1} by Sripada Studios`}
                         className="h-full w-full object-cover"
                       />
                     </div>
@@ -839,7 +864,7 @@ export default function PrabhavaPage() {
               >
                 <img
                   src={image.src}
-                  alt={`Photography ${index + 1}`}
+                  alt={`Kannada movie promotion and launch event photography ${index + 1}`}
                   className="block h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading={index < 6 ? 'eager' : 'lazy'}
                 />
@@ -960,9 +985,9 @@ export default function PrabhavaPage() {
             href="https://nearbystudio.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-8 flex items-center justify-between gap-6 overflow-hidden rounded-[28px] bg-[#173238] px-7 py-6 shadow-[0_24px_60px_rgba(23,50,56,0.18)] transition-transform duration-300 hover:-translate-y-0.5 md:mt-10 md:px-10 md:py-8"
+            className="group mt-8 flex flex-col gap-5 items-stretch md:flex-row md:items-center md:justify-between md:gap-6 overflow-hidden rounded-[24px] md:rounded-[28px] bg-[#173238] px-6 py-5 md:px-10 md:py-8 shadow-[0_24px_60px_rgba(23,50,56,0.18)] transition-transform duration-300 hover:-translate-y-0.5 md:mt-10"
           >
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4 md:gap-5">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#54c4b6]/15 text-[#54c4b6] md:h-14 md:w-14">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 md:h-7 md:w-7">
                   <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z" />
@@ -970,15 +995,15 @@ export default function PrabhavaPage() {
                 </svg>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#54c4b6]">
+                <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.28em] text-[#54c4b6]">
                   Nearby Studio
                 </p>
-                <h3 className="mt-1 text-lg font-black tracking-tight text-[#fffaf2] md:text-xl">
+                <h3 className="mt-1 text-base sm:text-lg md:text-xl font-black tracking-tight text-[#fffaf2]">
                   Shoot your next podcast at our in-house studio
                 </h3>
               </div>
             </div>
-            <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-[#fffaf2] transition-colors duration-200 group-hover:bg-white/20">
+            <div className="flex shrink-0 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-[#fffaf2] transition-colors duration-200 group-hover:bg-white/20 self-start md:self-auto">
               Book Now
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 -rotate-45">
                 <path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" />
@@ -1403,6 +1428,60 @@ export default function PrabhavaPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section (AEO, GEO, SEO Optimization) */}
+      <section className="overflow-hidden bg-[#f7f5ef] px-5 py-16 sm:px-8 md:px-12 md:py-24 lg:px-20 border-t border-[#173238]/5">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-10 text-center md:mb-14">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#8d6f2b]">
+              FAQ
+            </p>
+            <h2 className="text-3xl font-black tracking-tight text-[#173238] sm:text-4xl md:text-5xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#39545a] md:text-[15px]">
+              Find answers to common questions about Prabhava's film production, cinema marketing services, and Sripada Studios campaigns.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index
+              return (
+                <div
+                  key={index}
+                  className="overflow-hidden rounded-[22px] border border-[#173238]/10 bg-white shadow-[0_12px_36px_rgba(23,50,56,0.04)] transition-all duration-300"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-[#173238]/[0.02]"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-base font-bold text-[#173238] sm:text-lg">
+                      {faq.question}
+                    </span>
+                    <span className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#173238]/5 text-[#173238] transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#8d6f2b]/10 text-[#8d6f2b]' : ''}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="h-4 w-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    className={`transition-all duration-300 ease-in-out ${
+                      isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+                    }`}
+                  >
+                    <p className="border-t border-[#173238]/5 px-6 py-5 text-sm leading-relaxed text-[#4b666c] sm:text-base">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
