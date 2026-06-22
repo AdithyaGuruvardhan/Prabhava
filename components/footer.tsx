@@ -105,8 +105,8 @@ export const Footer: React.FC = () => {
             <div className="space-y-6">
               <ContactItem
                 icon={<FaPhone size={18} />}
-                text="+91 99806 87439"
-                href="tel:+919980687439"
+                text="+91 86603 41949"
+                href="tel:+918660341949"
               />
               <ContactItem
                 icon={<FaEnvelope size={18} />}

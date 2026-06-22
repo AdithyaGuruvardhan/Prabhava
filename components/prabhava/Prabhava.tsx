@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import { LocalVideo } from '@/components/ui/local-video'
 
 import { Header } from '@/components/header'
@@ -38,18 +37,18 @@ const creativeImages = [
 ]
 
 const filmyClients = [
-  { name: 'Film Client 45', logo: '/Film%20Clients/color/45.png' },
-  { name: 'Film Client 100', logo: '/Film%20Clients/color/KP.png' },
-  { name: 'Film Client De', logo: '/Film%20Clients/color/GP2.png' },
-  { name: 'Film Client GP2', logo: '/Film%20Clients/color/JD.png' },
-  { name: 'Film Client JD', logo: '/Film%20Clients/color/De.png' },
-  { name: 'Film Client KB', logo: '/Film%20Clients/color/KB.png' },
-  { name: 'Film Client KP', logo: '/Film%20Clients/color/100.png' },
-  { name: 'Film Client KPS', logo: '/Film%20Clients/color/TT.png' },
-  { name: 'Film Client MK', logo: '/Film%20Clients/color/MK.png' },
-  { name: 'Film Client TT', logo: '/Film%20Clients/color/KPS.png' },
-  { name: 'Film Client Ui', logo: '/Film%20Clients/color/Ui.png' },
-  { name: 'Film Client YK', logo: '/Film%20Clients/color/YK.png' },
+  { name: 'Film Client 45', logo: '/film-clients/color/45.png' },
+  { name: 'Film Client 100', logo: '/film-clients/color/KP.png' },
+  { name: 'Film Client De', logo: '/film-clients/color/GP2.png' },
+  { name: 'Film Client GP2', logo: '/film-clients/color/JD.png' },
+  { name: 'Film Client JD', logo: '/film-clients/color/De.png' },
+  { name: 'Film Client KB', logo: '/film-clients/color/KB.png' },
+  { name: 'Film Client KP', logo: '/film-clients/color/100.png' },
+  { name: 'Film Client KPS', logo: '/film-clients/color/TT.png' },
+  { name: 'Film Client MK', logo: '/film-clients/color/MK.png' },
+  { name: 'Film Client TT', logo: '/film-clients/color/KPS.png' },
+  { name: 'Film Client Ui', logo: '/film-clients/color/Ui.png' },
+  { name: 'Film Client YK', logo: '/film-clients/color/YK.png' },
 ]
 
 const videoEditCards = [
@@ -164,10 +163,10 @@ const lyricalVideoEdits = [
 ]
 
 const outdoorPromotionImages = [
-  '/promotions/promotions (2).jpg',
-  '/promotions/promotions.jpg',
-  '/promotions/promotions (6).jpg',
-  '/promotions/promotions (7).jpg',
+  '/outdoor-gallery/promotions_2.jpg',
+  '/outdoor-gallery/promotions.jpg',
+  '/outdoor-gallery/promotions_6.jpg',
+  '/outdoor-gallery/promotions_7.jpg',
 ]
 
 const photographyGalleryImages = [
@@ -448,14 +447,12 @@ export default function PrabhavaPage() {
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
           {/* Centered Logo */}
           <div className="mb-6 transition-transform duration-500 hover:scale-105">
-            <Image
+            <img
               src="/prabhava_logo.png"
               alt="Prabhava Logo"
               width={400}
               height={104}
-              sizes="(max-width: 768px) 240px, 400px"
               className="w-60 md:w-[400px] h-auto object-contain"
-              priority
             />
           </div>
 
@@ -624,12 +621,10 @@ export default function PrabhavaPage() {
                 className="group flex min-h-[110px] items-center justify-center rounded-[20px] border border-[#173238]/10 bg-white/80 p-3 shadow-[0_20px_55px_rgba(23,50,56,0.08)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:min-h-[160px] sm:rounded-[26px] sm:p-5 md:min-h-[180px]"
               >
                 <div className="relative h-16 w-full sm:h-24 md:h-28">
-                  <Image
+                  <img
                     src={client.logo}
                     alt={client.name}
-                    fill
-                    sizes="(max-width: 640px) 33vw, (max-width: 1280px) 16vw, 12vw"
-                    className="object-contain transition duration-300"
+                    className="h-full w-full object-contain transition duration-300"
                   />
                 </div>
               </div>
@@ -658,12 +653,10 @@ export default function PrabhavaPage() {
                     className="w-[190px] shrink-0 overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_20px_45px_rgba(0,0,0,0.22)] md:w-[250px]"
                   >
                     <div className="relative aspect-[3/4]">
-                      <Image
+                      <img
                         src={image}
                         alt={`Prabhava creative ${index + 1}`}
-                        fill
-                        sizes="(max-width: 768px) 190px, 250px"
-                        className="object-cover"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                   </div>
@@ -793,12 +786,10 @@ export default function PrabhavaPage() {
                 className={`overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.18)] ${index === 1 ? 'lg:-translate-y-4' : ''} ${index === 2 ? 'lg:translate-y-4' : ''}`}
               >
                 <a href={edit.video} className="block overflow-hidden rounded-[22px] relative group aspect-video md:aspect-[4/3] lg:aspect-video">
-                  <Image
+                  <img
                     src={edit.thumbnail}
                     alt={edit.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
                     <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -846,15 +837,11 @@ export default function PrabhavaPage() {
                 key={`${image.src}-${index}`}
                 className="group relative mb-4 self-start overflow-hidden rounded-[20px] border border-[#173238]/10 bg-[#173238]/5 break-inside-avoid shadow-[0_15px_35px_rgba(23,50,56,0.08)]"
               >
-                <Image
+                <img
                   src={image.src}
                   alt={`Photography ${index + 1}`}
-                  width={Math.min(image.width, 1200)}
-                  height={Math.min(image.height, 1200)}
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                   className="block h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading={index < 6 ? 'eager' : 'lazy'}
-                  priority={index < 6}
                 />
                 <div className="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-black/15" />
               </div>
@@ -928,12 +915,10 @@ export default function PrabhavaPage() {
                 <div className="absolute left-5 top-5 z-10 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-sm">
                   Featured Session
                 </div>
-                <Image
+                <img
                   src={podcastHighlights[0].image}
                   alt="Featured podcast interview setup"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-cover object-center"
+                  className="h-full w-full object-cover object-center"
                 />
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-[#0c1f23]/85 via-[#173238]/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
@@ -960,12 +945,9 @@ export default function PrabhavaPage() {
                   className="overflow-hidden rounded-[24px] border border-[#173238]/10 bg-white/75 p-2.5 shadow-[0_22px_60px_rgba(23,50,56,0.1)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="overflow-hidden rounded-[18px]">
-                    <Image
+                    <img
                       src={item.image}
                       alt={`Podcast interview highlight ${index + 1}`}
-                      width={1200}
-                      height={675}
-                      sizes="(max-width: 1024px) 100vw, 35vw"
                       className="aspect-[16/9] h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
                     />
                   </div>
@@ -1361,7 +1343,7 @@ export default function PrabhavaPage() {
                       {pkg.bonus}
                     </p>
                     <a
-                      href="tel:+919980687439"
+                      href="tel:+918660341949"
                       className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-[#fffaf2] backdrop-blur-sm transition-colors duration-200 hover:bg-white/20"
                     >
                       <span>Enquire</span>
@@ -1400,12 +1382,10 @@ export default function PrabhavaPage() {
               >
                 <div className="overflow-hidden bg-[linear-gradient(180deg,#ece6d8_0%,#ddd2bb_100%)] p-4">
                   <div className="relative overflow-hidden rounded-[22px] h-[320px]">
-                    <Image
+                    <img
                       src={person.image}
                       alt={person.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                      className="object-cover object-top"
+                      className="h-full w-full object-cover object-top"
                       loading="lazy"
                     />
                   </div>

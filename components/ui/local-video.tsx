@@ -107,13 +107,9 @@ export const LocalVideo = forwardRef<HTMLVideoElement, LocalVideoProps>(function
 
   return (
     <video ref={videoRef} preload={shouldLoad ? preload : "none"} {...props}>
-      {shouldLoad ? (
-        <>
-          {resolvedWebmSrc ? <source src={resolvedWebmSrc} type="video/webm" /> : null}
-          <source src={src} type={getMimeType(src)} />
-          {children}
-        </>
-      ) : null}
+      {resolvedWebmSrc ? <source src={resolvedWebmSrc} type="video/webm" /> : null}
+      <source src={src} type={getMimeType(src)} />
+      {children}
     </video>
   )
 })
