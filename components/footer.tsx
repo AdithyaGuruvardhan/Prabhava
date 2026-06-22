@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import {
   FaPhone,
@@ -136,12 +135,10 @@ export const Footer: React.FC = () => {
                   className="relative h-24 w-[240px] overflow-hidden rounded-[16px] border border-transparent bg-white/70 p-2 shadow-[0_12px_30px_rgba(33,105,116,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[#216974]/20 group-hover:shadow-[0_22px_45px_rgba(33,105,116,0.2)]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#216974]/0 via-[#54c4b6]/0 to-[#216974]/0 transition-all duration-300 group-hover:from-[#216974]/8 group-hover:via-[#54c4b6]/8 group-hover:to-[#216974]/12" />
-                  <Image
-                    src="/verticle logos/BW_logo.webp"
+                  <img
+                    src="/vertical-logos/BW_logo.webp"
                     alt="Buzziwah logo"
-                    fill
-                    sizes="240px"
-                    className="rounded-[10px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="h-full w-full rounded-[10px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
               </a>
@@ -150,12 +147,10 @@ export const Footer: React.FC = () => {
                   className="relative h-24 w-[200px] overflow-hidden rounded-[16px] border border-transparent bg-white/70 p-2 shadow-[0_12px_30px_rgba(33,105,116,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[#216974]/20 group-hover:shadow-[0_22px_45px_rgba(33,105,116,0.2)]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#216974]/0 via-[#54c4b6]/0 to-[#216974]/0 transition-all duration-300 group-hover:from-[#216974]/8 group-hover:via-[#54c4b6]/8 group-hover:to-[#216974]/12" />
-                  <Image
-                    src="/verticle logos/NBS_logo.webp"
+                  <img
+                    src="/vertical-logos/NBS_logo.webp"
                     alt="Nearby Studio logo"
-                    fill
-                    sizes="200px"
-                    className="rounded-[10px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="h-full w-full rounded-[10px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
               </a>
@@ -169,14 +164,12 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
             {/* Logo */}
-            <Image
+            <img
               src="/prabhava_logo.png"
               alt="Sripada Studios"
               width={200}
               height={48}
-              sizes="200px"
               className="h-12 w-auto"
-              style={{ width: 'auto' }}
               draggable={false}
             />
 

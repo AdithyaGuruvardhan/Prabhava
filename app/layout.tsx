@@ -8,7 +8,8 @@ import { CopyProtection } from '@/components/copy-protection'
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
-  variable: '--font-roboto'
+  variable: '--font-roboto',
+  display: 'swap',
 });
 
 const SITE_URL = 'https://www.sripadastudios.com'
@@ -57,8 +58,8 @@ export const metadata: Metadata = {
   applicationName: 'Prabhava',
   referrer: 'origin-when-cross-origin',
   icons: {
-    icon: '/ss_favicon.png',
-    apple: '/apple-icon.png',
+    icon: '/prabhava_logo.png',
+    apple: '/prabhava_logo.png',
   },
 }
 
@@ -75,11 +76,7 @@ export default function RootLayout({
   return (
       <html lang="en">
         <head>
-          {/* Preconnect to Google Fonts CDN for pages that load custom fonts */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          {/* Preconnect to YouTube for the About section thumbnail */}
-          <link rel="preconnect" href="https://img.youtube.com" />
+          {/* Preconnect/dns-prefetch optimized */}
           <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
         </head>
         <body className={`${roboto.variable} copy-protected font-sans antialiased`}>
