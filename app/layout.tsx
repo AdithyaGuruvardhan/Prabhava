@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import GlobalVideoProvider from '@/components/global-video-provider'
 import { CopyProtection } from '@/components/copy-protection'
+import { Analytics } from "@vercel/analytics/next"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -76,6 +77,19 @@ export default function RootLayout({
   return (
       <html lang="en">
         <head>
+          {/* Google tag (gtag.js) */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY30TRB05E"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-LY30TRB05E');
+              `,
+            }}
+          />
           {/* Preconnect/dns-prefetch optimized */}
           <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
           {/* JSON-LD Schema Markup for SEO, AEO, AIO, GEO */}
@@ -160,6 +174,7 @@ export default function RootLayout({
           <GlobalVideoProvider>
             {children}
           </GlobalVideoProvider>
+          <Analytics />
         </body>
       </html>
   )
