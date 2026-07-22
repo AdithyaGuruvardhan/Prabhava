@@ -457,6 +457,18 @@ export default function PrabhavaPage() {
   const [selectedEventVideo, setSelectedEventVideo] = useState<(typeof eventHighlightVideos)[number] | null>(null)
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
   const showreelVideoRef = useRef<HTMLVideoElement | null>(null)
+  const [isShowreelPlaying, setIsShowreelPlaying] = useState(true)
+
+  const toggleShowreelPlay = () => {
+    if (showreelVideoRef.current) {
+      if (isShowreelPlaying) {
+        showreelVideoRef.current.pause()
+      } else {
+        showreelVideoRef.current.play()
+      }
+      setIsShowreelPlaying(!isShowreelPlaying)
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#f7f5ef]">
@@ -507,7 +519,7 @@ export default function PrabhavaPage() {
 
       {/* Showreel Section */}
       <section className="relative w-full bg-[#f7f5ef] px-4 md:px-8 py-8 md:py-16 flex justify-center items-center">
-        <div className="relative w-full max-w-5xl aspect-video rounded-2xl md:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(23,50,56,0.12)] border border-[#173238]/10 bg-black">
+        <div className="relative w-full max-w-5xl aspect-video rounded-2xl md:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(23,50,56,0.12)] border border-[#173238]/10 bg-black group">
           <img
             src="/prabhava/rishab_shetty_poster.webp"
             alt="Prabhava showreel preview"
@@ -525,10 +537,29 @@ export default function PrabhavaPage() {
             preload="none"
             loadStrategy="idle"
             onCanPlay={() => setVideoReady(true)}
+            onPlay={() => setIsShowreelPlaying(true)}
+            onPause={() => setIsShowreelPlaying(false)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
               videoReady ? 'opacity-100' : 'opacity-0'
             }`}
           />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+            <button
+              onClick={toggleShowreelPlay}
+              className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white hover:bg-white/30 transition-all hover:scale-110"
+              aria-label={isShowreelPlaying ? "Pause video" : "Play video"}
+            >
+              {isShowreelPlaying ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                  <path fillRule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clipRule="evenodd" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 ml-1">
+                  <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </section>
 

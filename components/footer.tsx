@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import {
   FaPhone,
@@ -68,9 +69,9 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
   const hoverStyles: Record<string, string> = {
     facebook: "hover:text-blue-600",
-    youtube: "hover:text-red-600",
     twitter: "hover:text-black",
     instagram: "hover:text-[#E1306C]",
+    youtube: "hover:text-red-600",
   };
 
   return (
@@ -130,7 +131,7 @@ export const Footer: React.FC = () => {
               Our Verticals
             </h3>
             <div className="flex flex-wrap items-center gap-6 lg:gap-10">
-              <a href="https://www.sripadastudios.com/buzziwah" className="group">
+              <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="group">
                 <div
                   className="relative h-24 w-[240px] overflow-hidden rounded-[16px] border border-transparent bg-white/70 p-2 shadow-[0_12px_30px_rgba(33,105,116,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[#216974]/20 group-hover:shadow-[0_22px_45px_rgba(33,105,116,0.2)]"
                 >
@@ -142,7 +143,7 @@ export const Footer: React.FC = () => {
                   />
                 </div>
               </a>
-              <a href="https://www.sripadastudios.com/nearby" className="group">
+              <a href="https://nearbystudio.in/" target="_blank" rel="noopener noreferrer" className="group">
                 <div
                   className="relative h-24 w-[200px] overflow-hidden rounded-[16px] border border-transparent bg-white/70 p-2 shadow-[0_12px_30px_rgba(33,105,116,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[#216974]/20 group-hover:shadow-[0_22px_45px_rgba(33,105,116,0.2)]"
                 >
@@ -164,14 +165,16 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
             {/* Logo */}
-            <img
-              src="/prabhava_logo.png"
-              alt="Sripada Studios"
-              width={200}
-              height={48}
-              className="h-12 w-auto"
-              draggable={false}
-            />
+            <Link href="/">
+              <img
+                src="/prabhava_logo.png"
+                alt="Sripada Studios"
+                width={200}
+                height={48}
+                className="h-12 w-auto cursor-pointer"
+                draggable={false}
+              />
+            </Link>
 
             {/* Social */}
             <div className="flex flex-col items-center lg:items-end gap-5">
@@ -182,26 +185,26 @@ export const Footer: React.FC = () => {
               <div className="flex gap-8">
                 <SocialIcon
                   icon={<FaInstagram />}
-                  href="https://www.instagram.com/sripadastudios/"
+                  href="https://www.instagram.com/nammaprabhava/"
                   type="instagram"
                   ariaLabel="Instagram"
                 />
                 <SocialIcon
+                  icon={<FaFacebookF />}
+                  href="https://www.facebook.com/nammaprabhavaofficial"
+                  type="facebook"
+                  ariaLabel="Facebook"
+                />
+                <SocialIcon
                   icon={<FaYoutube />}
-                  href="https://www.youtube.com/@SRIPADASTUDIOS"
+                  href="https://www.youtube.com/@NammaPrabhava"
                   type="youtube"
                   ariaLabel="YouTube"
                   bypassVideoModal
                 />
                 <SocialIcon
-                  icon={<FaFacebookF />}
-                  href="https://www.facebook.com/sripadastudiosofficial"
-                  type="facebook"
-                  ariaLabel="Facebook"
-                />
-                <SocialIcon
                   icon={<FaXTwitter />}
-                  href="https://twitter.com/SripadaStudios"
+                  href="https://x.com/nammaprabhava"
                   type="twitter"
                   ariaLabel="X"
                 />
@@ -214,7 +217,7 @@ export const Footer: React.FC = () => {
             <span>Copyright © 2026 Prabhava</span>
             <span className="hidden sm:inline">&nbsp;-&nbsp;</span>
             <span className="sm:inline">Developed with Passion by&nbsp;</span>
-            <a href="https://www.sripadastudios.com/buzziwah" className="inline-flex items-center gap-2 text-teal-700 transition-colors hover:text-teal-800">
+            <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-teal-700 transition-colors hover:text-teal-800">
               <FaHeart className="text-purple-600" aria-hidden="true" />
               <span>Buzziwah</span>
             </a>
