@@ -168,7 +168,7 @@ export const Footer: React.FC = () => {
             <Link href="/">
               <img
                 src="/prabhava_logo.png"
-                alt="Sripada Studios"
+                alt="Prabhava"
                 width={200}
                 height={48}
                 className="h-12 w-auto cursor-pointer"
