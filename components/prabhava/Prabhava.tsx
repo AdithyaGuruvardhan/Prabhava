@@ -494,15 +494,15 @@ export default function PrabhavaPage() {
           </div>
 
           {/* Subheading */}
-          <p className="mt-4 text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-[#8d6f2b]">
+          <p className="mt-4 text-xs md:text-sm font-medium uppercase tracking-[0.35em] text-black/60">
             A Film Promotion Company by{' '}
             <a
               href="https://sripadastudios.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-[#5e4b1e] transition-colors"
+              className="hover:underline text-[#5e4b1e] transition-colors font-bold italic"
             >
-              Sripada Studios
+              &ldquo;Sripada Studios&rdquo;
             </a>
           </p>
 
