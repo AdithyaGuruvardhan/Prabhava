@@ -77,6 +77,7 @@ export default function RootLayout({
   return (
       <html lang="en">
         <head>
+          <meta name="p:domain_verify" content="47284d3857bba83e0f4accc3606ab5ae" />
           {/* Google tag (gtag.js) */}
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY30TRB05E"></script>
           <script
