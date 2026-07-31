@@ -11,6 +11,7 @@ import {
   FaInstagram,
   FaYoutube,
   FaXTwitter,
+  FaPinterest,
 } from "react-icons/fa6";
 
 interface ContactItemProps {
@@ -22,7 +23,7 @@ interface ContactItemProps {
 interface SocialIconProps {
   icon: React.ReactNode;
   href: string;
-  type: "facebook" | "instagram" | "youtube" | "twitter";
+  type: "facebook" | "instagram" | "youtube" | "twitter" | "pinterest";
   ariaLabel: string;
   bypassVideoModal?: boolean;
 }
@@ -72,6 +73,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
     twitter: "hover:text-black",
     instagram: "hover:text-[#E1306C]",
     youtube: "hover:text-red-600",
+    pinterest: "hover:text-[#E60023]",
   };
 
   return (
@@ -207,6 +209,12 @@ export const Footer: React.FC = () => {
                   href="https://x.com/nammaprabhava"
                   type="twitter"
                   ariaLabel="X"
+                />
+                <SocialIcon
+                  icon={<FaPinterest />}
+                  href="https://in.pinterest.com/nammaprabhava/"
+                  type="pinterest"
+                  ariaLabel="Pinterest"
                 />
               </div>
             </div>
